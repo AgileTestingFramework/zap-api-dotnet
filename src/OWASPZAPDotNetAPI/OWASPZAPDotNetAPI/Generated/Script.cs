@@ -39,7 +39,7 @@ namespace OWASPZAPDotNetAPI.Generated
 		}
 
 		/// <summary>
-		///This component is optional and therefore the API will only work if it is installed
+		///Lists the script engines available
 		/// </summary>
 		/// <returns></returns>
 		public IApiResponse listEngines()
@@ -49,7 +49,7 @@ namespace OWASPZAPDotNetAPI.Generated
 		}
 
 		/// <summary>
-		///This component is optional and therefore the API will only work if it is installed
+		///Lists the scripts available, with its engine, name, description, type and error state.
 		/// </summary>
 		/// <returns></returns>
 		public IApiResponse listScripts()
@@ -59,14 +59,14 @@ namespace OWASPZAPDotNetAPI.Generated
 		}
 
 		/// <summary>
-		///This component is optional and therefore the API will only work if it is installed
+		///Enables the script with the given name
 		/// </summary>
 		/// <returns></returns>
 		public IApiResponse enable(string apikey, string scriptname)
 		{
 			Dictionary<string, string> parameters = null;
 			parameters = new Dictionary<string, string>();
-			if (string.IsNullOrWhiteSpace(apikey)){
+			if (!string.IsNullOrWhiteSpace(apikey)){
 				parameters.Add("apikey", apikey);
 			}
 			parameters.Add("scriptName", scriptname);
@@ -74,14 +74,14 @@ namespace OWASPZAPDotNetAPI.Generated
 		}
 
 		/// <summary>
-		///This component is optional and therefore the API will only work if it is installed
+		///Disables the script with the given name
 		/// </summary>
 		/// <returns></returns>
 		public IApiResponse disable(string apikey, string scriptname)
 		{
 			Dictionary<string, string> parameters = null;
 			parameters = new Dictionary<string, string>();
-			if (string.IsNullOrWhiteSpace(apikey)){
+			if (!string.IsNullOrWhiteSpace(apikey)){
 				parameters.Add("apikey", apikey);
 			}
 			parameters.Add("scriptName", scriptname);
@@ -89,14 +89,14 @@ namespace OWASPZAPDotNetAPI.Generated
 		}
 
 		/// <summary>
-		///This component is optional and therefore the API will only work if it is installed
+		///Loads a script into ZAP from the given local file, with the given name, type and engine, optionally with a description
 		/// </summary>
 		/// <returns></returns>
 		public IApiResponse load(string apikey, string scriptname, string scripttype, string scriptengine, string filename, string scriptdescription)
 		{
 			Dictionary<string, string> parameters = null;
 			parameters = new Dictionary<string, string>();
-			if (string.IsNullOrWhiteSpace(apikey)){
+			if (!string.IsNullOrWhiteSpace(apikey)){
 				parameters.Add("apikey", apikey);
 			}
 			parameters.Add("scriptName", scriptname);
@@ -108,14 +108,14 @@ namespace OWASPZAPDotNetAPI.Generated
 		}
 
 		/// <summary>
-		///This component is optional and therefore the API will only work if it is installed
+		///Removes the script with the given name
 		/// </summary>
 		/// <returns></returns>
 		public IApiResponse remove(string apikey, string scriptname)
 		{
 			Dictionary<string, string> parameters = null;
 			parameters = new Dictionary<string, string>();
-			if (string.IsNullOrWhiteSpace(apikey)){
+			if (!string.IsNullOrWhiteSpace(apikey)){
 				parameters.Add("apikey", apikey);
 			}
 			parameters.Add("scriptName", scriptname);
@@ -123,14 +123,14 @@ namespace OWASPZAPDotNetAPI.Generated
 		}
 
 		/// <summary>
-		///This component is optional and therefore the API will only work if it is installed
+		///Runs the stand alone script with the give name
 		/// </summary>
 		/// <returns></returns>
 		public IApiResponse runStandAloneScript(string apikey, string scriptname)
 		{
 			Dictionary<string, string> parameters = null;
 			parameters = new Dictionary<string, string>();
-			if (string.IsNullOrWhiteSpace(apikey)){
+			if (!string.IsNullOrWhiteSpace(apikey)){
 				parameters.Add("apikey", apikey);
 			}
 			parameters.Add("scriptName", scriptname);
