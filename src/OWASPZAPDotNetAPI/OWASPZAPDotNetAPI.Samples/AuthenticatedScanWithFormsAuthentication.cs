@@ -136,7 +136,7 @@ namespace OWASPZAPDotNetAPI.Samples
         private static string StartActiveScanning()
         {
             Console.WriteLine("Active Scanner: " + _target);
-            _apiResponse = _api.ascan.scan(_apikey, _target, "", "", "", "", "");
+            _apiResponse = _api.ascan.scan(apikey: _apikey, url: _target, recurse: "", inscopeonly: "", scanpolicyname: "", method: "", postdata: "", contextid: "");
 
             string activeScanId = ((ApiResponseElement)_apiResponse).Value;
             return activeScanId;
@@ -187,7 +187,7 @@ namespace OWASPZAPDotNetAPI.Samples
         private static string StartSpidering()
         {
             Console.WriteLine("Spider: " + _target);
-            _apiResponse = _api.spider.scan(_apikey, _target, "");
+            _apiResponse = _api.spider.scan(apikey: _apikey, url: _target, maxchildren: "", recurse: "", contextname: "", subtreeonly: "");
             string scanid = ((ApiResponseElement)_apiResponse).Value;
             return scanid;
         }
